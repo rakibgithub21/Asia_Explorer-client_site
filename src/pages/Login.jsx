@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContextComponent';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 
 // import logo from '../assets/images.png'
@@ -10,6 +11,11 @@ import { AuthContext } from '../context/AuthContextComponent';
 const Login = () => {
     const { signInUser, setLoading, googleLogin, githubLogin } = useContext(AuthContext)
     const [error, setError] = useState('')
+
+    const [showPassword, setShowPassword] = useState(false)
+    const handlePassword = () => {
+        setShowPassword(!showPassword)
+    }
 
     // const location = useLocation();
 
@@ -29,6 +35,7 @@ const Login = () => {
                 // toast.success('Login SuccessFully')
                 // navigate(from)
                 // navigate(location?.state ? location.state : '/')
+                
             })
             .catch(error => {
                 setLoading(false)
@@ -52,13 +59,13 @@ const Login = () => {
                     </div>
                     <div className="space-y-1  text-lg relative">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                        <input {...register("password", { required: true })} type="password" id="password" placeholder="Type Your Email" className="pl-7 input input-bordered w-full" />
+                        <input {...register("password", { required: true })} type={showPassword ? "text" : "password"} id="password" placeholder="Type Your Email" className="pl-7 input input-bordered w-full" />
                         {errors.password && <span className="text-red-500">This field is required</span>}
-                        {/* <p onClick={handlePassword} className="absolute top-11 right-5">
+                        <p onClick={handlePassword} className="absolute top-11 right-5">
                             {
-                                showPassword ? <FaRegEye className="text-xl" /> : <FaRegEyeSlash className="text-xl" />
+                                showPassword ? <FaRegEye className="text-xl text-black" /> : <FaRegEyeSlash className="text-black text-xl" />
                             }
-                        </p> */}
+                        </p>
                         
                         
                     </div>

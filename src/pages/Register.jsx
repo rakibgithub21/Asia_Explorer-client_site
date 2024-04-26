@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextComponent";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
@@ -13,6 +14,12 @@ const Register = () => {
        
         formState: { errors },
     } = useForm()
+
+    const [showPassword, setShowPassword] = useState(false)
+    const handlePassword = () => {
+        setShowPassword(!showPassword)
+    }
+
     const navigate = useNavigate()
 
     const onSubmit = (data) => {
@@ -77,7 +84,12 @@ const Register = () => {
                             lowercase: value => /[a-z]/.test(value)
                         }
                     })}
-                        type="password" placeholder="Type Your Password" className="input focus:ring-2 focus:ring-green-600 focus:bg-slate-200 focus:text-black ring-1 ring-black input-bordered w-full" />
+                        type={showPassword ? "text" : "password"} placeholder="Type Your Password" className="input focus:ring-2 focus:ring-green-600 focus:bg-slate-200  focus:text-black ring-1 ring-black input-bordered w-full" />
+                    <p onClick={handlePassword} className="absolute top-11 right-5">
+                        {
+                            showPassword ? <FaRegEye className="text-xl text-black" /> : <FaRegEyeSlash className="text-xl text-black" />
+                        }
+                    </p>
                     {errors.name && <span className="text-red-500">This field is required</span>}
                     {errors.password && errors.password.type === "minLength" && (
                         <p className="text-red-500">Password must be at least 6 characters long</p>
