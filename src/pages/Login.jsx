@@ -1,17 +1,18 @@
 
 import { Link } from 'react-router-dom';
 
+
 // import logo from '../assets/images.png'
 
 const Login = () => {
     return (
         <div className="flex px-4 justify-center ">
             
-            <div className="w-full shadow-2xl raleway md:w-4/6 lg:w-3/6 mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+            <div className="w-full shadow-2xl  raleway md:w-4/6 lg:w-3/6 mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
 
-                <h1 className="text-3xl font-medium">Login To Your Account</h1>
+                <h1 className="text-3xl font-medium">Please Login To Your Account</h1>
                 <p className="text-lg text-slate-400">The Faster you Login, The Faster we get to work</p>
-                <form className="space-y-6 bg-slate-300 ring-1 ring-purple-500 rounded-lg px-10 py-5">
+                <form className="space-y-6 bg-slate-100 ring-1 ring-purple-500 rounded-lg px-10 py-5">
                     <div className="space-y-1 text-lg relative">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
                         <input type="email" id="email" placeholder="Type Your Email" className="input pl-7 input-bordered w-full" />
