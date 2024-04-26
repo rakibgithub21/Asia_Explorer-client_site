@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import TouristSpot from "../pages/TouristSpot";
 import AddTourist from "../pages/AddTourist";
 import MyList from "../pages/MyList";
+import Login from "../pages/Login";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: '/my-list',
                 element:<MyList></MyList>
+            },
+            {
+                path: '/login',
+                element:<Login></Login>
             }
         ]
     },

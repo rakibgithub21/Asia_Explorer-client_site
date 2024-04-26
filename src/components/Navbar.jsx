@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -40,11 +40,11 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <div className="flex raleway gap-1 font-medium text-lg">
-                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold text-lg text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5 text-lg rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/'}>Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold text-lg  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5 text-lg rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>Tourist Spot</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold text-lg  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5 text-lg rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourist</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold text-lg  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5 text-lg rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/my-list'}>My List</NavLink>
+                <div className="flex raleway gap-2 font-medium ">
+                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/'}>Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>Tourist Spot</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourist</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/my-list'}>My List</NavLink>
                 </div>
             </div>
             <div className="navbar-end flex gap-3">
@@ -67,7 +67,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <a className="btn">Login</a>
+                <Link to={'/login'} className="btn">Login</Link>
                 
                 
             </div>
