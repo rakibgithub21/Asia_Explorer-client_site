@@ -1,19 +1,40 @@
 
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContextComponent';
 
 
 // import logo from '../assets/images.png'
 
 const Login = () => {
+    const { signInUser, setLoading, googleLogin, githubLogin } = useContext(AuthContext)
+    const [error, setError] = useState('')
+
+    // const location = useLocation();
+
+    // const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
-
+    const onSubmit = (data) => {
+        const { email, password } = data;
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                // toast.success('Login SuccessFully')
+                // navigate(from)
+                // navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                setLoading(false)
+                setError(error.message);
+            })
+    }
     return (
         <div className=" flex px-4 justify-center ">
             
@@ -25,25 +46,25 @@ const Login = () => {
                     <div className="space-y-1 text-lg relative">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
                         <input {...register("email", { required: true })} type="email" id="email" placeholder="Type Your Email" className="input pl-7 input-bordered w-full" />
+                        {errors.password && <span className="text-red-500">This field is required</span>}
                         
-                        {/* {errors.email && <span className="text-red-500">This field is required</span>} */}
 
                     </div>
                     <div className="space-y-1  text-lg relative">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <input {...register("password", { required: true })} type="password" id="password" placeholder="Type Your Email" className="pl-7 input input-bordered w-full" />
-                        
+                        {errors.password && <span className="text-red-500">This field is required</span>}
                         {/* <p onClick={handlePassword} className="absolute top-11 right-5">
                             {
                                 showPassword ? <FaRegEye className="text-xl" /> : <FaRegEyeSlash className="text-xl" />
                             }
                         </p> */}
                         
-                        {/* {errors.password && <span className="text-red-500">This field is required</span>} */}
+                        
                     </div>
-                    {/* {
+                    {
                         error && <p className="text-xl text-red-500">{error}</p>
-                    } */}
+                    }
                     <button type="submit" className="block btn hover:text-white text-xl btn-success w-full">Login</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
