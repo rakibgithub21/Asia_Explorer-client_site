@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className="flex px-4 justify-center ">
+        <div className=" flex px-4 justify-center ">
             
             <div className="w-full shadow-2xl  raleway md:w-4/6 lg:w-3/6 mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
 
@@ -62,7 +62,7 @@ const Login = () => {
                     </button>
                 </div>
                 <p className="text-lg text-center  inter sm:px-6 dark:text-gray-600">Do Not have an Account?
-                    <Link className="underline inter font-medium text-rose-300 hover:text-blue-400 text-lg ml-2" to={'/registration'}>Register</Link>
+                    <Link className="underline inter font-medium text-rose-300 hover:text-blue-400 text-lg ml-2" to={'/register'}>Register</Link>
 
                 </p>
             </div>
