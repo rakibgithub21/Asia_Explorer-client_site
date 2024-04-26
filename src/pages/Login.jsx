@@ -1,10 +1,19 @@
 
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 
 // import logo from '../assets/images.png'
 
 const Login = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => console.log(data)
+
     return (
         <div className=" flex px-4 justify-center ">
             
@@ -12,24 +21,24 @@ const Login = () => {
 
                 <h1 className="text-3xl font-medium">Please Login To Your Account</h1>
                 <p className="text-lg text-slate-400">The Faster you Login, The Faster we get to work</p>
-                <form className="space-y-6 bg-slate-100 ring-1 ring-purple-500 rounded-lg px-10 py-5">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6  rounded-lg px-10 py-5">
                     <div className="space-y-1 text-lg relative">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                        <input type="email" id="email" placeholder="Type Your Email" className="input pl-7 input-bordered w-full" />
-                        {/* <p className="absolute top-11 left-2"><CiMail /></p> */}
+                        <input {...register("email", { required: true })} type="email" id="email" placeholder="Type Your Email" className="input pl-7 input-bordered w-full" />
+                        
                         {/* {errors.email && <span className="text-red-500">This field is required</span>} */}
 
                     </div>
                     <div className="space-y-1  text-lg relative">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                        <input type="password" id="password" placeholder="Type Your Email" className="pl-7 input input-bordered w-full" />
+                        <input {...register("password", { required: true })} type="password" id="password" placeholder="Type Your Email" className="pl-7 input input-bordered w-full" />
                         
                         {/* <p onClick={handlePassword} className="absolute top-11 right-5">
                             {
                                 showPassword ? <FaRegEye className="text-xl" /> : <FaRegEyeSlash className="text-xl" />
                             }
                         </p> */}
-                        {/* <p className="absolute top-11 left-2"><CiLock /></p> */}
+                        
                         {/* {errors.password && <span className="text-red-500">This field is required</span>} */}
                     </div>
                     {/* {
