@@ -9,7 +9,7 @@ const TourSpot = ({ tourSpot }) => {
     return (
         <div className="card  bg-base-100 shadow-xl image-full">
             <figure><img src={tourSpot.image} alt="Shoes" /></figure>
-            <div className="card-body">
+            <div className="card-body flex flex-col justify-between">
                 <div className='space-y-1'>
                     <h2 className="text-4xl">{tourSpot.tourist_spot}</h2>
                     <p className='text-xl'>{tourSpot.country}</p>

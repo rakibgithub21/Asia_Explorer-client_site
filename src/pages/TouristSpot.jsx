@@ -5,7 +5,7 @@ import TourSpot from "../components/TourSpot";
 const TouristSpot = () => {
     const touristSpots = useLoaderData()
     return (
-        <div className="grid lg:grid-cols-3 gap-x-10 gap-y-8 md:grid-cols-2 grid-cols-1">
+        <div className="grid px-2 lg:grid-cols-3 gap-x-10 gap-y-8 md:grid-cols-2 grid-cols-1">
             {
                 touristSpots.map(tourSpot => <TourSpot
                     key={tourSpot._id}
