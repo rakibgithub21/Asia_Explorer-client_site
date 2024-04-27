@@ -1,7 +1,7 @@
 
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContextComponent';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
@@ -17,9 +17,9 @@ const Login = () => {
         setShowPassword(!showPassword)
     }
 
-    // const location = useLocation();
+    const location = useLocation();
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -34,7 +34,7 @@ const Login = () => {
                 console.log(result.user);
                 // toast.success('Login SuccessFully')
                 // navigate(from)
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
                 
             })
             .catch(error => {
