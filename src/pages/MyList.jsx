@@ -7,18 +7,15 @@ import TableRow from "../components/TableRow";
 const MyList = () => {
     const { user } = useContext(AuthContext)
 
-    const [data, setData] = useState([])
+    const [tourData, setTourData] = useState([])
 
 
     useEffect(() => {
         fetch(`http://localhost:5000/tourist-spot-email/${user?.email}`)
             .then(res => res.json())
-            .then(data => setData(data))
-    }, [user])
-    console.log(data);
-    if (data.length === 0) {
-        return <Loading></Loading>
-    } else {
+            .then(data => setTourData(data))
+    }, [user, tourData])
+
         return (
             <div className="overflow-x-auto min-h-[calc(100vh-367px)]">
                 <table className="table">
@@ -35,7 +32,9 @@ const MyList = () => {
                     <tbody className="lg:text-lg">
 
                         {
-                            data.map(tourSpot => <TableRow
+                            tourData.map(tourSpot => <TableRow
+                                tourData={tourData}
+                                setTourData={setTourData}
                                 key={tourSpot._id}
                                 tourSpot={tourSpot}
                             ></TableRow>)
@@ -48,6 +47,5 @@ const MyList = () => {
 
     }
 
-};
 
 export default MyList;
