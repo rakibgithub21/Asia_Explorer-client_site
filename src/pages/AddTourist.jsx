@@ -1,5 +1,10 @@
+import { useContext } from "react";
 import { FaAngleDown } from "react-icons/fa6";
+import { AuthContext } from "../context/AuthContextComponent";
+import Swal from 'sweetalert2'
+
 const AddTourist = () => {
+    const{user} = useContext(AuthContext)
 
     const handleAddTourist = (e) => {
         e.preventDefault()
@@ -10,13 +15,31 @@ const AddTourist = () => {
         const location = form.location.value;
         const description = form.description.value;
         const cost = form.cost.value;
-        const season = form.season.value;
+        const seasonality = form.seasonality.value;
         const travel = form.travel.value;
         const visitor = form.visitor.value;
         const email = form.email.value;
         const name = form.name.value;
-        console.log(image, tourist_spot, country, location, description, cost, season, travel, visitor, email, name);
-        
+        const info = { image, tourist_spot, country, location, description, cost, seasonality, travel, visitor, email, name }
+        // console.log(image, tourist_spot, country, location, description, cost, season, travel, visitor, email, name);
+        fetch('http://localhost:5000/tourist-spot', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(info)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Congratulations",
+                        text: "Success Fully Added",
+                        icon: "success"
+                    });
+                    
+                }
+            })
     }
     
     return (
@@ -36,7 +59,8 @@ const AddTourist = () => {
                 </div>
                 <div className="relative">
                     <label htmlFor="country">Country Name</label>
-                    <select name="country" id="country" className="input input-bordered w-full mt-1">
+                    <select required name="country" id="country" className="input input-bordered w-full mt-1">
+                        <option value="Select Country" >Select Country</option>
                         <option value="Bangladesh">Bangladesh</option>
                         <option value="Thailand">Thailand</option>
                         <option value="Indonesia">Indonesia</option>
@@ -56,19 +80,24 @@ const AddTourist = () => {
                 </div>
                 <div>
                     <label htmlFor="cost">Average Cost</label>
-                    <input required name="cost" type="text" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input required name="cost" type="number" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div className="relative">
                     <label htmlFor="seasonality">Select Season</label>
-                    <select name="season" id="seasonality" className="input input-bordered w-full mt-1">
-                        <option value="Summer">Summer</option>
-                        <option value="Winter">Winter</option>
+                    <select required name="seasonality" id="seasonality" className="input input-bordered w-full mt-1">
+                        <option value="Select Seasson" >Select Seasion</option>
+                        <option value="Bangladesh">Winter</option>
+                        <option value="Thailand">Summer</option>
+                        <option value="Indonesia">Autumn</option>
+                        <option value="Malaysia">Spring</option>
                     </select>
                     <p className="absolute top-10 right-2"> <FaAngleDown className="text-2xl" /></p>
+                    {/* <input required name="season" id="seasonality" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " /> */}
+                    
                 </div>
                 <div>
                     <label htmlFor="travel">Travel Time</label>
-                    <input required name="travel" id="travel" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input required name="travel" id="travel" type="number" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
                     <label htmlFor="visitor">Total Visitor Per Year</label>
@@ -76,11 +105,11 @@ const AddTourist = () => {
                 </div>
                 <div>
                     <label htmlFor="email">User Email</label>
-                    <input  name="email" id="email" type="email" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input defaultValue={user?.email} disabled name="email" id="email" type="email" placeholder="Type here" className="input input-bordered w-full mt-1 cursor-not-allowed" />
                 </div>
                 <div>
                     <label htmlFor="name">User Name</label>
-                    <input  name="name" id="name" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input defaultValue={user?.displayName} disabled name="name" id="name" type="text" placeholder="Type here" className="input input-bordered cursor-not-allowed w-full mt-1" />
                 </div>
                 <input className="md:col-span-2 w-full btn btn-outline btn-primary" type="submit" value="Add" />
             </form>
