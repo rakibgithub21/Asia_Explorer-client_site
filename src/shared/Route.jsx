@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "../components/PrivateRoute";
 import ViewDetails from "../components/ViewDetails";
 import Update from "../components/Update";
+import SameCountries from "../components/SameCountries";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +40,11 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element:<Register></Register>
+            },
+            {
+                path: '/country/:country',
+                element: <SameCountries></SameCountries>,
+                loader: ({ params }) => fetch(`http://localhost:5000/country/${params.country}`)
             },
             {
                 path: '/update/:id',
