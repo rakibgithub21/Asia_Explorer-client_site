@@ -81,8 +81,8 @@ const Navbar = () => {
                         user ? <>
                             
                                 
-                                    <div className="w-10 rounded-full">
-                                <img data-tooltip-id="my-tooltip-1" title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                                    <div className="w-12 h-12 rounded-full">
+                                <img className="w-full h-full rounded-full" data-tooltip-id="my-tooltip-1" title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                             </div>
                             
                             <button data-tooltip-id="my-tooltip-2" className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button>
