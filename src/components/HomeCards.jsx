@@ -15,7 +15,7 @@ const HomeCards = () => {
         return<Loading></Loading>
     } else {
         return (
-            <div className="grid z-0 px-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+            <div className="grid z-0 px-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 mt-10 gap-y-8">
                 {
                     cards.map(card => <Card
                         key={card._id}
