@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextComponent";
 import Loading from "./Loading";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
         logout()
             .then(() => {
                 // Sign-out successful.
-                // toast.success('Log out successful');
+                toast.success('Log out successful');
             })
             .catch(() => {
                 // An error happened.
@@ -82,7 +83,7 @@ const Navbar = () => {
                                         <img title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                                     </div>
                                 </div>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-2 z-50 p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><button className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button></li>
                                 </ul>
                             </div>

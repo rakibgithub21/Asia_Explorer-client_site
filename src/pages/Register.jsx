@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextComponent";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const Register = () => {
@@ -27,7 +28,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                // toast.success("Registration success.Login now")
+                toast.success("Registration success.Login now")
 
                 updateUser(name, image)
                     .then(() => {

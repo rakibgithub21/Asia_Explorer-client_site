@@ -39,8 +39,8 @@ const TableRow = ({ tourSpot, tourData,setTourData }) => {
     return (
         <tr className="hover">
             <td>{tourSpot.tourist_spot}</td>
-            <td>{tourSpot.cost}</td>
-            <td>{tourSpot.travel}</td>
+            <td>{tourSpot.cost} $</td>
+            <td>{tourSpot.travel} /days</td>
             <td className='flex gap-2'>
                 <Link to={`/update/${tourSpot._id}`} className="btn btn-success">Update</Link>
                 <button onClick={() => handleDelete(tourSpot._id)} className="btn btn-error">Delete</button></td>

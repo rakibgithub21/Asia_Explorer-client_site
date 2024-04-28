@@ -13,7 +13,7 @@ const TourSpot = ({ tourSpot }) => {
                 <div className='space-y-1'>
                     <h2 className="text-4xl">{tourSpot.tourist_spot}</h2>
                     <p className='text-xl'>{tourSpot.country}</p>
-                    <p>Average Cost: {tourSpot.cost}</p>
+                    <p>Average Cost: {tourSpot.cost} $</p>
 
                     <p>{tourSpot.description}</p>
                 </div>

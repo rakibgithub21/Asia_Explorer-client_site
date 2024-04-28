@@ -8,7 +8,7 @@ const Card = ({card}) => {
             <div className="card-body flex flex-col justify-between">
                 <div className='space-y-1'>
                     <h2 className="text-4xl">{card.tourist_spot}</h2>
-                    <p className='text-xl'>{card.country}</p> <p>Average Cost: {card.cost}</p>
+                    <p className='text-xl'>{card.country}</p> <p>Average Cost: {card.cost} $</p>
                     <p>{card.description}</p>
                 </div>
                 <div className="card-actions justify-end">
