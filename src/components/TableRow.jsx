@@ -35,16 +35,6 @@ const TableRow = ({ tourSpot, tourData,setTourData }) => {
             }
         });
 
-
-        // console.log(_id);
-        // fetch(`http://localhost:5000/delete/${_id}`,{
-        //     method:"DELETE"
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         // if (data.deletedCount>1)
-        //     console.log(data);
-        // })
     }
     return (
         <tr className="hover">
