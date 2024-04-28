@@ -21,7 +21,7 @@ const ViewDetails = () => {
                         <p className='flex items-center gap-1'><SiUnitednations />{country}</p>
                         <p className='flex items-center gap-1'><FaLocationDot /> Location : {location}</p>
                         <p className='flex items-center gap-1'><GiMoneyStack /> Average Cost: {cost} $</p>
-                        <p className='flex gap-1 items-center'><GrGroup />Total Visitor Per Year: {visitor}</p>
+                        <p className='flex gap-1 items-center'><GrGroup />Total Visitor Per Year: Approximately {visitor} Million</p>
                         <p className='flex items-center gap-1'><CiCalendarDate /> Travel Time: {travel} days</p>
                         <p className='flex gap-1 items-center'><TiWeatherPartlySunny /> Season: {season}</p>
                         <div className='text-center bg-slate-800 w-2/3 mx-auto  text-base py-2 rounded-md'>

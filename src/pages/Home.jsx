@@ -1,4 +1,5 @@
 import Countries from "../components/Countries";
+import Feedback from "../components/Feedback";
 import Frequently from "../components/Frequently";
 import HomeCards from "../components/HomeCards";
 import Slider from "../components/Slider";
@@ -13,6 +14,7 @@ const Home = () => {
 
             <Countries></Countries>
             <Frequently></Frequently>
+            <Feedback></Feedback>
         </div>
     );
 };

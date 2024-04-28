@@ -2,11 +2,11 @@ import faq from '../assets/FaqWord.jpg'
 
 const Frequently = () => {
     return (
-        <div className='grid lg:grid-cols-5 mt-20 px-2'>
-            <div className=' lg:col-span-2'>
-                <img className='w-full h-full' src={faq} alt="" />
+        <div className='grid lg:grid-cols-5 gap-5 mt-20 px-2'>
+            <div className=' lg:col-span-2 '>
+                <img className='w-full h-full rounded-md' src={faq} alt="" />
             </div>
-            <div className="px-2 space-y-2 lg:col-span-3">
+            <div className="px-2 space-y-2 lg:col-span-3 flex flex-col justify-center">
                 <div className="collapse collapse-arrow bg-base-200">
                     <input type="radio" name="my-accordion-2" defaultChecked />
                     <div className="collapse-title text-xl font-medium">

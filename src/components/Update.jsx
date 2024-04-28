@@ -84,7 +84,7 @@ const Update = () => {
                     <input defaultValue={description} required name="description" type="text" id="description" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="cost">Average Cost</label>
+                    <label htmlFor="cost">Average Cost <span className=""> (*Remember it will show in dollar*) </span> </label>
                     <input defaultValue={cost} required name="cost" type="number" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div className="relative">
@@ -99,11 +99,11 @@ const Update = () => {
                     <p className="absolute top-10 right-2"> <FaAngleDown className="text-2xl" /></p>
                 </div>
                 <div>
-                    <label htmlFor="travel">Travel Time</label>
+                    <label htmlFor="travel">Travel Time <span className=""> (*Add Just days number For example(6)*) </span></label>
                     <input defaultValue={travel} required name="travel" id="travel" type="number" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="visitor">Total Visitor Per Year</label>
+                    <label htmlFor="visitor">Total Visitor Per Year <span className=""> (*Remember it will show in million) </span> </label>
                     <input defaultValue={visitor} required name="visitor" id="visitor" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
