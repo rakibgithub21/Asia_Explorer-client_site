@@ -51,8 +51,8 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'text-lg hover:text-rose-500 '} to={'/'}>Home</NavLink>
-                            <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'text-lg hover:text-rose-500 '} to={'/tourist-spot'}>Tourist Spot</NavLink>
-                            <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/add-tourist'}>Add Tourist</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'text-lg hover:text-rose-500 '} to={'/tourist-spot'}>All Tourists Spot</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/add-tourist'}>Add Tourists Spot</NavLink>
                             <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/my-list'}>My List</NavLink>
                         </ul>
                     </div>
@@ -61,8 +61,8 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <div className="flex raleway gap-2 font-medium ">
                         <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/'}>Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>Tourist Spot</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourist</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>All Tourists Spot</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourists Spot</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/my-list'}>My List</NavLink>
                     </div>
                 </div>

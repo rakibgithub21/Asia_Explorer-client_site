@@ -26,7 +26,7 @@ const TouristSpot = () => {
 
             <div className="flex justify-center my-5">
                 <select onChange={handleSorting} id="sortSelect" className="p-2 border  bg-[#23BE0A] border-gray-300 rounded-md text-white font-medium focus:outline-none focus:border-blue-500 " defaultValue="default">
-                    <option value="default" disabled>Sort By</option>
+                    <option value="default" disabled>Sort By Cost</option>
                     <option value="Descending">Descending</option>
                     <option value="Ascending">Ascending</option>
                 </select>
