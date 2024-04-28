@@ -5,6 +5,7 @@ import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContextComponent';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { useTypewriter } from 'react-simple-typewriter';
 
 
 // import logo from '../assets/images.png'
@@ -18,6 +19,14 @@ const Login = () => {
     const handlePassword = () => {
         setShowPassword(!showPassword)
     }
+
+    const [typeEffect] = useTypewriter({
+        words: ["Your Account", "Your Profile", " Account Space"],
+        loop: {},
+        typeSpeed: 100,
+        deleteSpeed: 50,
+        delaySpeed: 2000,
+    })
 
     const location = useLocation();
 
@@ -82,7 +91,7 @@ const Login = () => {
             
             <div className="w-full shadow-2xl  raleway md:w-4/6 lg:w-3/6 mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
 
-                <h1 className="text-3xl font-medium">Please Login To Your Account</h1>
+                <h1 className="text-3xl font-medium">Please Login To <span className='text-rose-400'>{typeEffect}</span></h1>
                 <p className="text-lg text-slate-400">The Faster you Login, The Faster we get to work</p>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6  rounded-lg px-10 py-5">
                     <div className="space-y-1 text-lg relative">

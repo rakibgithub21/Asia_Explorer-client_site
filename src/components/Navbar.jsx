@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextComponent";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
-import 'react-tooltip/dist/react-tooltip.css'
+
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
 
@@ -58,14 +58,14 @@ const Navbar = () => {
                             <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/my-list'}>My List</NavLink>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost  lg:text-xl">Asia Explorer</a>
+                    <a  className="btn btn-ghost  lg:text-xl">Asia Explorer</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="flex raleway gap-2 font-medium ">
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/'}>Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>All Tourists Spot</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourists Spot</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/my-list'}>My List</NavLink>
+                        <NavLink data-tooltip-id="my-tooltip-2" className={({ isActive }) => isActive ? 'border-2 font-semibold  text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/'}>Home</NavLink>
+                        <NavLink data-tooltip-id="my-tooltip-2" className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/tourist-spot'}>All Tourists Spot</NavLink>
+                        <NavLink data-tooltip-id="my-tooltip-2" className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/add-tourist'}>Add Tourists Spot</NavLink>
+                        <NavLink data-tooltip-id="my-tooltip-2" className={({ isActive }) => isActive ? 'border-2 font-semibold   text-[#10be0a] border-[#a3da5aee] py-3 rounded-xl px-5' : 'py-3 px-5  rounded-xl hover:bg-cyan-100 hover:text-blue-500 '} to={'/my-list'}>My List</NavLink>
                     </div>
                 </div>
                 <div className="navbar-end flex gap-3">
@@ -85,7 +85,7 @@ const Navbar = () => {
                                 <img className="w-full h-full rounded-full" data-tooltip-id="my-tooltip-1" title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                             </div>
                             
-                            <button data-tooltip-id="my-tooltip-2" className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button>
+                            <button  className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button>
                                
                            
 
@@ -106,8 +106,8 @@ const Navbar = () => {
             <ReactTooltip
                 id="my-tooltip-2"
                 place="bottom"
-                variant="warning"
-                content="Logout"
+                variant="info"
+                content="click me"
             />
            
        </div>

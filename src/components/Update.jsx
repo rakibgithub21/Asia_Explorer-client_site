@@ -114,7 +114,7 @@ const Update = () => {
                     <label htmlFor="name">User Name</label>
                     <input defaultValue={user?.displayName} disabled name="name" id="name" type="text" placeholder="Type here" className="input input-bordered cursor-not-allowed w-full mt-1" />
                 </div>
-                <input className="md:col-span-2 w-full btn btn-outline btn-primary" type="submit" value="Add" />
+                <input className="md:col-span-2 w-full btn btn-outline btn-primary" type="submit" value="Update" />
             </form>
         </div>
     );

@@ -17,7 +17,7 @@ const Slider = () => {
             .then(data => setSliders(data))
     }, [])
     return (
-        <div className="z-0">
+        <div className="z-0 lg:mt-20">
             <Swiper
                 navigation={true}
                 pagination={{
