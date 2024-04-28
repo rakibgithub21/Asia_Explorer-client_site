@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextComponent";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 
 const Navbar = () => {
@@ -56,7 +58,7 @@ const Navbar = () => {
                             <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/my-list'}>My List</NavLink>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Southeast Asia Explorer</a>
+                    <a className="btn btn-ghost  lg:text-xl">Asia Explorer</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="flex raleway gap-2 font-medium ">
@@ -77,16 +79,15 @@ const Navbar = () => {
                     </label>
                     {
                         user ? <>
-                            <div  className="dropdown  dropdown-end">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            
+                                
                                     <div className="w-10 rounded-full">
-                                        <img title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
-                                    </div>
-                                </div>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-2 z-50 p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><button className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button></li>
-                                </ul>
+                                <img data-tooltip-id="my-tooltip-1" title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                             </div>
+                            
+                            <button data-tooltip-id="my-tooltip-2" className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button>
+                               
+                           
 
                         </> : <Link to={'/login'} className="btn btn-success">Login</Link>
                    }
@@ -96,6 +97,19 @@ const Navbar = () => {
 
                 </div>
             </div>
+            <ReactTooltip
+                id="my-tooltip-1"
+                place="bottom"
+                variant="info"
+                content={user?.displayName}
+            />
+            <ReactTooltip
+                id="my-tooltip-2"
+                place="bottom"
+                variant="warning"
+                content="Logout"
+            />
+           
        </div>
     );
 };
