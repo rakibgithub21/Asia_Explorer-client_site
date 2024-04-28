@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import { toast } from "react-toastify";
 
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import logo from '../assets/2072187.png'
 
 
 const Navbar = () => {
@@ -58,7 +59,7 @@ const Navbar = () => {
                             <NavLink className={({ isActive }) => isActive ? ' text-lg font-medium text-[#0aa9be] underline rounded' : 'hover:text-rose-500 text-lg '} to={'/my-list'}>My List</NavLink>
                         </ul>
                     </div>
-                    <a  className="btn btn-ghost  lg:text-xl">Asia Explorer</a>
+                    <a  className="btn flex items-center gap-1 btn-ghost  lg:text-xl"><img className="w-10" src={logo} alt="" />Asia Explorer</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="flex raleway gap-2 font-medium ">
@@ -82,7 +83,7 @@ const Navbar = () => {
                             
                                 
                                     <div className="w-12 h-12 rounded-full">
-                                <img className="w-full h-full rounded-full" data-tooltip-id="my-tooltip-1" title={user?.displayName ? user.displayName : 'Unknown'} alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                                <img className="w-full h-full rounded-full" data-tooltip-id="my-tooltip-1"  alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                             </div>
                             
                             <button  className="btn btn-outline btn-error" onClick={logoutUser}>Logout</button>

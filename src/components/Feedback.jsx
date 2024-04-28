@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import logo from '../assets/feedback-mindmap-760.jpg'
 import { AuthContext } from '../context/AuthContextComponent';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';

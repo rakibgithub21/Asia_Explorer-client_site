@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { AuthContext } from "../context/AuthContextComponent";
 import Swal from 'sweetalert2'
 
 const AddTourist = () => {
-    const{user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const formRef = useRef(null); 
 
     const handleAddTourist = (e) => {
         e.preventDefault()
@@ -36,7 +37,10 @@ const AddTourist = () => {
                         title: "Congratulations",
                         text: "Success Fully Added",
                         icon: "success"
+                    }).then(() => {
+                        formRef.current.reset(); // Reset the form fields
                     });
+
                     
                 }
             })
@@ -48,7 +52,7 @@ const AddTourist = () => {
                 <h3 className="text-2xl font-medium">Add Tourist Spots</h3>
                 <p>Contribute to our global travel database with ease! Add tourist spots effortlessly through our intuitive form. Share images, descriptions, and essential details to help fellow travelers discover new destinations. Start adding now and be a part of the adventure</p>
             </div>
-            <form onSubmit={handleAddTourist} className="lg:col-span-5 shadow-lg  grid gap-5 md:grid-cols-2 p-4">
+            <form ref={formRef} onSubmit={handleAddTourist} className="lg:col-span-5 shadow-lg  grid gap-5 md:grid-cols-2 p-4">
                 <div>
                     <label htmlFor="image">Image URL</label>
                     <input required id="image" name="image" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
@@ -101,7 +105,7 @@ const AddTourist = () => {
                 </div>
                 <div>
                     <label htmlFor="visitor">Total Visitor Per Year <span className=""> (*Remember it will show in million) </span> </label>
-                    <input required name="visitor" id="visitor" type="number" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input required name="visitor" id="visitor" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
                     <label htmlFor="email">User Email</label>
