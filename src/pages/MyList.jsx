@@ -9,12 +9,21 @@ const MyList = () => {
 
     const [tourData, setTourData] = useState([])
 
+    const[loading,setLoading] = useState(true)
+
 
     useEffect(() => {
         fetch(`https://b9-a10-server-site-project.vercel.app/tourist-spot-email/${user?.email}`)
             .then(res => res.json())
-            .then(data => setTourData(data))
+            .then(data => {
+                setTourData(data)
+                setLoading(false)
+            })
     }, [user, tourData])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className="overflow-x-auto min-h-[calc(100vh-367px)]">
