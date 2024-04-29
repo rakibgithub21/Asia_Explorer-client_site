@@ -64,7 +64,7 @@ const Feedback = () => {
                         
                         <textarea data-tooltip-id="my-tooltip-4" required rows={3} className="textarea placeholder:text-black bg-red-200 textarea-bordered textarea-lg text-black w-full " ></textarea>
                     </label>
-                    <button data-tooltip-id="my-tooltip-3" onClick={feedback} type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-violet-600 text-gray-50 focus:ring-violet-600 hover:ring-violet-600">Feedback</button>
+                    <button data-tooltip-id="my-tooltip-3"  type="submit" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-violet-600 text-gray-50 focus:ring-violet-600 hover:ring-violet-600">Feedback</button>
                 </form>
             </div>
             <ReactTooltip

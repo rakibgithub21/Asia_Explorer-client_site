@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                element: <Update></Update>,
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://b9-a10-server-site-project.vercel.app/tourist-spot/${params.id}`)
             },
             {

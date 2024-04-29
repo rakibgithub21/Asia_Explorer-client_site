@@ -24,6 +24,7 @@ const MyList = () => {
                     <tr>
                         <th>Tourist Spot Name</th>
                         <th>Average Cost</th>
+                        <th>Seasonality</th>
                         <th>Travel Time</th>
                         <th>Update/Delete</th>
 

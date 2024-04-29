@@ -84,26 +84,27 @@ const Update = () => {
                     <input defaultValue={description} required name="description" type="text" id="description" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="cost">Average Cost <span className=""> (*Remember it will show in dollar*) </span> </label>
-                    <input defaultValue={cost} required name="cost" type="number" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <label htmlFor="cost">Average Cost <sup className="text-sm text-red-500">*Dollar*</sup></label>
+                    <input defaultValue={cost} required name="cost" type="text" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div className="relative">
                     <label htmlFor="seasonality">Select Season</label>
                     <select defaultValue={seasonality} required name="seasonality" id="seasonality" className="input input-bordered w-full mt-1">
                         <option value="Select Seasson" >Select Seasion</option>
-                        <option value="Bangladesh">Winter</option>
-                        <option value="Thailand">Summer</option>
-                        <option value="Indonesia">Autumn</option>
-                        <option value="Malaysia">Spring</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Autumn">Autumn</option>
+                        <option value="Spring">Spring</option>
                     </select>
                     <p className="absolute top-10 right-2"> <FaAngleDown className="text-2xl" /></p>
                 </div>
                 <div>
-                    <label htmlFor="travel">Travel Time <span className=""> (*Add Just days number For example(6)*) </span></label>
-                    <input defaultValue={travel} required name="travel" id="travel" type="number" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <label htmlFor="travel">Travel Time </label>
+                    <input defaultValue={travel} required name="travel" id="travel" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="visitor">Total Visitor Per Year <span className=""> (*Remember it will show in million) </span> </label>
+                    
+                    <label htmlFor="visitor">Total Visitor Per Year</label>
                     <input defaultValue={visitor} required name="visitor" id="visitor" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>

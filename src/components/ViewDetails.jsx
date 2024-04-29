@@ -10,7 +10,8 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 const ViewDetails = () => {
     const data = useLoaderData()
     console.log(data);
-    const { image, tourist_spot, country, location, description, cost, season, travel, visitor, email, name } = data;
+    console.log(data);
+    const { image, tourist_spot, country, location, description, cost, seasonality, travel, visitor, email, name } = data;
     return (
         <section className='px-5'>
             <div className="bg-slate-600 rounded-xl">
@@ -21,9 +22,9 @@ const ViewDetails = () => {
                         <p className='flex items-center gap-1'><SiUnitednations />{country}</p>
                         <p className='flex items-center gap-1'><FaLocationDot /> Location : {location}</p>
                         <p className='flex items-center gap-1'><GiMoneyStack /> Average Cost: {cost} $</p>
-                        <p className='flex gap-1 items-center'><GrGroup />Total Visitor Per Year: Approximately {visitor} Million</p>
+                        <p className='flex gap-1 items-center'><GrGroup />Total Visitor Per Year: {visitor}</p>
                         <p className='flex items-center gap-1'><CiCalendarDate /> Travel Time: {travel} days</p>
-                        <p className='flex gap-1 items-center'><TiWeatherPartlySunny /> Season: {season}</p>
+                        <p className='flex gap-1 items-center'><TiWeatherPartlySunny /> Season: {seasonality}</p>
                         <div className='text-center bg-slate-800 w-2/3 mx-auto  text-base py-2 rounded-md'>
                             <h3>Post By: {name}</h3>
                             <h3>Email: {email}</h3>

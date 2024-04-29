@@ -55,11 +55,11 @@ const AddTourist = () => {
             <form ref={formRef} onSubmit={handleAddTourist} className="lg:col-span-5 shadow-lg  grid gap-5 md:grid-cols-2 p-4">
                 <div>
                     <label htmlFor="image">Image URL</label>
-                    <input required id="image" name="image" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input required id="image" name="image" type="text" placeholder="Enter Your Image URL" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
                     <label htmlFor="spot">Tourists Spot Name</label>
-                    <input required id="spot" name="spot" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <input required id="spot" name="spot" type="text" placeholder="Tourist spot name" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div className="relative">
                     <label htmlFor="country">Country Name</label>
@@ -83,29 +83,30 @@ const AddTourist = () => {
                     <input required name="description" type="text" id="description" placeholder="Type here" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="cost">Average Cost <span className=""> (*Remember it will show in dollar*) </span> </label>
-                    <input required name="cost" type="number" id="cost" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <label htmlFor="cost">Average Cost <sup className="text-sm text-red-500">*Dollar*</sup></label>
+                    <input required name="cost" type="number" id="cost" placeholder="Fill Data Like 450" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div className="relative">
                     <label htmlFor="seasonality">Select Season</label>
                     <select required name="seasonality" id="seasonality" className="input input-bordered w-full mt-1">
                         <option value="Select Seasson" >Select Seasion</option>
-                        <option value="Bangladesh">Winter</option>
-                        <option value="Thailand">Summer</option>
-                        <option value="Indonesia">Autumn</option>
-                        <option value="Malaysia">Spring</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Autumn">Autumn</option>
+                        <option value="Spring">Spring</option>
                     </select>
                     <p className="absolute top-10 right-2"> <FaAngleDown className="text-2xl" /></p>
                     {/* <input required name="season" id="seasonality" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " /> */}
 
                 </div>
                 <div>
-                    <label htmlFor="travel">Travel Time <span className=""> (*Add Just days number For example(6)*) </span></label>
-                    <input required name="travel" id="travel" type="number" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    <label htmlFor="travel">Travel Time</label>
+                    <input required name="travel" id="travel" type="text" placeholder="Fill Data like 3 - 5 days" className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
-                    <label htmlFor="visitor">Total Visitor Per Year <span className=""> (*Remember it will show in million) </span> </label>
-                    <input required name="visitor" id="visitor" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " />
+                    
+                    <label htmlFor="visitor">Total Visitor Per Year </label>
+                    <input required name="visitor" id="visitor" type="text" placeholder="Fill Data like Over 1 million " className="input input-bordered w-full mt-1 " />
                 </div>
                 <div>
                     <label htmlFor="email">User Email</label>
