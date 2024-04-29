@@ -6,13 +6,13 @@ import Loading from "./Loading";
 const HomeCards = () => {
     const [cards, setCards] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/home-tour')
+        fetch('https://b9-a10-server-site-project.vercel.app/home-tour')
             .then(res => res.json())
             .then(data => setCards(data))
     }, [])
 
     if (cards.length === 0) {
-        return<Loading></Loading>
+        return <Loading></Loading>
     } else {
         return (
             <div className="grid z-0 px-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 mt-10 gap-y-8">
@@ -25,8 +25,8 @@ const HomeCards = () => {
             </div>
         );
     }
-    
-    
+
+
 };
 
 export default HomeCards;

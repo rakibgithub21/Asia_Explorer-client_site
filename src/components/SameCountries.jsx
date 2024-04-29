@@ -6,7 +6,7 @@ const SameCountries = () => {
     const countries = useLoaderData()
     
     return (
-        <div className="">
+        <div className="mt-14 px-2">
             <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-10 gap-y-8">
                 {
                     countries.map(country => <SameCountry

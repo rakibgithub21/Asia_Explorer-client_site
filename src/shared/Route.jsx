@@ -16,16 +16,16 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
             {
                 path: '/tourist-spot',
                 element: <TouristSpot></TouristSpot>,
-                loader: () => fetch('http://localhost:5000/tourist-spot')
+                loader: () => fetch('https://b9-a10-server-site-project.vercel.app/tourist-spot')
             },
             {
                 path: '/add-tourist',
@@ -37,26 +37,26 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element:<Login></Login>
+                element: <Login></Login>
             },
             {
                 path: '/register',
-                element:<Register></Register>
+                element: <Register></Register>
             },
             {
                 path: '/country/:country',
                 element: <SameCountries></SameCountries>,
-                loader: ({ params }) => fetch(`http://localhost:5000/country/${params.country}`)
+                loader: ({ params }) => fetch(`https://b9-a10-server-site-project.vercel.app/country/${params.country}`)
             },
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tourist-spot/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9-a10-server-site-project.vercel.app/tourist-spot/${params.id}`)
             },
             {
                 path: '/view-details/:id',
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tourist-spot/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9-a10-server-site-project.vercel.app/tourist-spot/${params.id}`)
             },
         ]
     },

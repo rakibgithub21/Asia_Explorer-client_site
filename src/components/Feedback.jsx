@@ -24,10 +24,10 @@ const Feedback = () => {
         
     }
     return (
-        <section className="py-6 bg-gradient-to-r from-rose-100 to-red-50 mt-10  raleway">
+        <section className="py-6 bg-gradient-to-r from-rose-100 to-red-50 mt-10 rounded-lg  raleway">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                 <div className="py-6 md:py-0 text-slate-800 md:px-6">
-                    <h1 className="text-4xl font-bold">Get in touch</h1>
+                    <h1 className="text-2xl lg:text-4xl font-bold">Your Feedback Matters!</h1>
                     <p className="pt-2 pb-4">Fill in the form to share your experience</p>
                     <div className="space-y-4 text-slate-800 font-medium">
                         <p className="flex items-center">

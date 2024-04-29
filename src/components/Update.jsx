@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const Update = () => {
     const { user } = useContext(AuthContext)
     const data = useLoaderData()
-    const { _id,image, tourist_spot, country, location, description, cost, seasonality, travel, visitor } = data;
+    const { _id, image, tourist_spot, country, location, description, cost, seasonality, travel, visitor } = data;
 
     const handleAddTourist = (e) => {
         e.preventDefault()
@@ -26,12 +26,12 @@ const Update = () => {
         const name = form.name.value;
         const info = { image, tourist_spot, country, location, description, cost, seasonality, travel, visitor, email, name }
         console.log(info);
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://b9-a10-server-site-project.vercel.app/update/${_id}`, {
             method: "PUT",
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(info)
+            body: JSON.stringify(info)
         })
 
             .then(res => res.json())
@@ -42,9 +42,9 @@ const Update = () => {
                         text: "Success Fully Update",
                         icon: "success"
                     });
-                    
+
                 }
-        })
+            })
 
     }
     return (

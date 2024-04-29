@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const TableRow = ({ tourSpot, tourData,setTourData }) => {
+const TableRow = ({ tourSpot, tourData, setTourData }) => {
 
     const handleDelete = (_id) => {
 
@@ -16,7 +16,7 @@ const TableRow = ({ tourSpot, tourData,setTourData }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${_id}`, {
+                fetch(`https://b9-a10-server-site-project.vercel.app/delete/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

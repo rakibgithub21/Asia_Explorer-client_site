@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 // import { useLoaderData } from "react-router-dom";
 import Country from "./Country";
-import { useTypewriter,Cursor } from "react-simple-typewriter";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 
 const Countries = () => {
@@ -13,15 +13,15 @@ const Countries = () => {
         loop: {},
         typeSpeed: 100,
         deleteSpeed: 50,
-        delaySpeed:2000,
+        delaySpeed: 2000,
     })
 
     useEffect(() => {
-        fetch('http://localhost:5000/country')
+        fetch('https://b9-a10-server-site-project.vercel.app/country')
             .then(res => res.json())
-        .then(data =>setCountries(data))
+            .then(data => setCountries(data))
     }, [])
-    
+
     return (
         <div className="mt-10 px-2 ">
             <div className="space-y-3">

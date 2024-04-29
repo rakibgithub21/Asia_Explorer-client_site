@@ -12,7 +12,7 @@ const Slider = () => {
     const [sliders, setSliders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/slider')
+        fetch('https://b9-a10-server-site-project.vercel.app/slider')
             .then(res => res.json())
             .then(data => setSliders(data))
     }, [])
@@ -33,7 +33,7 @@ const Slider = () => {
 
                 {
                     sliders.map(slide => <SwiperSlide
-                    key={slide._id}
+                        key={slide._id}
                     >
                         <div className="hero h-[560px] bg-base-200 mb-20">
                             <div className="hero-content flex-col lg:flex-row-reverse">

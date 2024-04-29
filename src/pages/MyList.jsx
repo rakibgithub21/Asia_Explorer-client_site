@@ -11,41 +11,41 @@ const MyList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tourist-spot-email/${user?.email}`)
+        fetch(`https://b9-a10-server-site-project.vercel.app/tourist-spot-email/${user?.email}`)
             .then(res => res.json())
             .then(data => setTourData(data))
     }, [user, tourData])
 
-        return (
-            <div className="overflow-x-auto min-h-[calc(100vh-367px)]">
-                <table className="table">
-                    {/* head */}
-                    <thead className="lg:text-xl md:text-lg text-gray-500">
-                        <tr>
-                            <th>Tourist Spot Name</th>
-                            <th>Average Cost</th>
-                            <th>Travel Time</th>
-                            <th>Update/Delete</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody className="lg:text-lg">
+    return (
+        <div className="overflow-x-auto min-h-[calc(100vh-367px)]">
+            <table className="table">
+                {/* head */}
+                <thead className="lg:text-xl md:text-lg text-gray-500">
+                    <tr>
+                        <th>Tourist Spot Name</th>
+                        <th>Average Cost</th>
+                        <th>Travel Time</th>
+                        <th>Update/Delete</th>
 
-                        {
-                            tourData.map(tourSpot => <TableRow
-                                tourData={tourData}
-                                setTourData={setTourData}
-                                key={tourSpot._id}
-                                tourSpot={tourSpot}
-                            ></TableRow>)
-                        }
+                    </tr>
+                </thead>
+                <tbody className="lg:text-lg">
 
-                    </tbody>
-                </table>
-            </div>
-        );
+                    {
+                        tourData.map(tourSpot => <TableRow
+                            tourData={tourData}
+                            setTourData={setTourData}
+                            key={tourSpot._id}
+                            tourSpot={tourSpot}
+                        ></TableRow>)
+                    }
 
-    }
+                </tbody>
+            </table>
+        </div>
+    );
+
+}
 
 
 export default MyList;

@@ -2,7 +2,7 @@ import faq from '../assets/FaqWord.jpg'
 
 const Frequently = () => {
     return (
-        <div className='grid lg:grid-cols-5 gap-5 mt-20 px-2'>
+        <div className='grid lg:grid-cols-5 gap-5 mt-20 mb-20 px-2'>
             <div className=' lg:col-span-2 '>
                 <img className='w-full h-full rounded-md' src={faq} alt="" />
             </div>

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 const AddTourist = () => {
     const { user } = useContext(AuthContext)
-    const formRef = useRef(null); 
+    const formRef = useRef(null);
 
     const handleAddTourist = (e) => {
         e.preventDefault()
@@ -23,12 +23,12 @@ const AddTourist = () => {
         const name = form.name.value;
         const info = { image, tourist_spot, country, location, description, cost, seasonality, travel, visitor, email, name }
         // console.log(image, tourist_spot, country, location, description, cost, season, travel, visitor, email, name);
-        fetch('http://localhost:5000/tourist-spot', {
+        fetch('https://b9-a10-server-site-project.vercel.app/tourist-spot', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(info)
+            body: JSON.stringify(info)
         })
             .then(res => res.json())
             .then(data => {
@@ -41,11 +41,11 @@ const AddTourist = () => {
                         formRef.current.reset(); // Reset the form fields
                     });
 
-                    
+
                 }
             })
     }
-    
+
     return (
         <div className="grid lg:grid-cols-7 gap-5">
             <div className="lg:col-span-2  inter p-2 space-y-3">
@@ -97,7 +97,7 @@ const AddTourist = () => {
                     </select>
                     <p className="absolute top-10 right-2"> <FaAngleDown className="text-2xl" /></p>
                     {/* <input required name="season" id="seasonality" type="text" placeholder="Type here" className="input input-bordered w-full mt-1 " /> */}
-                    
+
                 </div>
                 <div>
                     <label htmlFor="travel">Travel Time <span className=""> (*Add Just days number For example(6)*) </span></label>
