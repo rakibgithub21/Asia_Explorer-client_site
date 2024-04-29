@@ -1,11 +1,13 @@
 
 Welcome to Asia Explorer, your ultimate Southeast Asia Travel Guide! This guide showcases the beauty and diversity of Southeast Asian destinations.
 
-## Website Name:
-Asia Explorer
+## Website Name :  Asia Explorer
 
-## Live Site URL:
+
+## Live Site URL :
 (https://b9-a10-authentication.web.app/)
+
+## Features : 
 
 - **Responsive Design**: Ensuring the website looks great and functions well across various devices.
   
