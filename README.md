@@ -55,7 +55,7 @@ Living Lane leverages cutting-edge technologies to deliver a seamless user exper
 
 ## Feedback and Support
 
-We value your feedback! If you have any questions, suggestions, or need assistance, please don't hesitate to reach out to our support team at mdrakibulislam.mailbox@gmail.com.Explore the enchanting landscapes, rich cultures, and historical landmarks of Southeast Asia through our travel guide. Start planning your next adventure today!
+We value your feedback! If you have any questions, suggestions, or need assistance, please don't hesitate to reach out to our support team at mdrakibulislam.mailbox@gmail.com. Explore the enchanting landscapes, rich cultures, and historical landmarks of Southeast Asia through our travel guide. Start planning your next adventure today!
 
 
 
