@@ -35,5 +35,28 @@ Welcome to Asia Explorer, your ultimate Southeast Asia Travel Guide! This guide 
 
 ## Selected Category: Southeast Asian Destinations
 
-Explore the enchanting landscapes, rich cultures, and historical landmarks of Southeast Asia through our travel guide. Start planning your next adventure today!
+## NPM Packages Used For Bonus:
+
+- [React TypeWriter](https://www.npmjs.com/package/react-typewriter): Enhance text animation with React TypeWriter, adding dynamic and engaging content presentation.
+- [React Tooltip](https://www.npmjs.com/package/react-tooltip): Improve user experience with React Tooltip, providing informative hints and tooltips throughout the application interface.
+
+
+## Technologies Used
+
+Living Lane leverages cutting-edge technologies to deliver a seamless user experience:
+
+- [React](https://reactjs.org/): The frontend of Living Lane is built using React, providing a fast and interactive user interface.
+- [React Router](https://reactrouter.com/): Utilize React Router for declarative routing, enabling navigation and URL manipulation in Living Lane's single-page application architecture.
+- [Tailwind CSS](https://tailwindcss.com/): Customize and design Living Lane's UI with the utility-first CSS framework Tailwind CSS, offering flexibility and rapid development.
+- [Mamba UI](https://www.mambaui.com/): Utilize Mamba UI for building elegant and customizable user interfaces in Living Lane, providing a wide range of UI components and themes.
+- [React Toastify](https://fkhadra.github.io/react-toastify/): Enhance user notifications with React Toastify, ensuring a smooth user experience when interacting with the platform.
+- [React Icons](https://react-icons.github.io/react-icons/): Utilize a vast library of icons from React Icons to enhance visual elements throughout the application.
+- [Firebase](https://firebase.google.com/): Firebase provides backend services such as authentication and database management, powering the core functionality of Living Lane.
+
+## Feedback and Support
+
+We value your feedback! If you have any questions, suggestions, or need assistance, please don't hesitate to reach out to our support team at mdrakibulislam.mailbox@gmail.com.Explore the enchanting landscapes, rich cultures, and historical landmarks of Southeast Asia through our travel guide. Start planning your next adventure today!
+
+
+
 
