@@ -56,6 +56,16 @@ Living Lane leverages cutting-edge technologies to deliver a seamless user exper
 - [Firebase](https://firebase.google.com/): Firebase provides backend services such as authentication and database management, powering the core functionality of Living Lane.
 
 - 
+- ## Getting Started
+
+### Prerequisites
+
+```bash
+git clone https://github.com/rakibgithub21/Asia_Explorer-client_site
+cd Asia_Explorer-client_site
+npm install
+```
+
 ### Setting Up Firebase
 
 1. Obtain Firebase credentials (API key, project ID, etc.) from the Firebase console.
